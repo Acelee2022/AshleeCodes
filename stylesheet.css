@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root{
+    --primary-color: #502A50;
+    --primary-color-dark: #461D3A;
+    --secondary-color: #6E8880;
+    --text-dark: #2E2C39;
+    --text-light: #6b7280;
+    --extra-light: #faf5ff;
+    --max-width: 1200px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: "Poppins", serif;
+    background: linear-gradient(-45deg, var(--primary-color), var(--primary-color-dark), var(--text-light), var(--text-dark));
+    background-size: 400% 400%;
+    animation: bg 8s ease infinite;
+}
+
+@keyframes bg{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+nav{
+    width: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 99;
+}
+
+.nav_content{
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul li ul.dropdown li {
+    display:block;
+}
+
+ul li ul.dropdown{
+    width: 100%;
+    background: var(--extra-light);
+    color: var(--extra-dark);
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+/*nav logo*/ 
+
+nav .logo a{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: .3s;
+}
+
+nav .logo a:hover{
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+}
+
+nav .checkbox{
+    display: none;
+}
+
+nav input{
+    display: none;
+}
+
+nav .checkbox i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    transition: left 0.3s;
+}
+
+ul li a{
+    padding: 0.5rem 1rem;
+    border: 2px soild transparent;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--extra-dark);
+    transition: 0.3s;
+}
+
+ul li a:hover{
+    border-top-color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+
+.section__container{
+    min-height: 100vh;
+    min-width: var(--max-width);
+    margin: auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subtitle{
+    letter-spacing: 2px;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.title{
+    font-weight: bold;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+    color: var(--extra-light);
+}
+
+.title span{
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+}
+
+.description{
+    line-height: 1.5rem;
+    color: var(--extra-light);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.image{
+    display:grid;
+    justify-items: center;
+}
+
+.image img{
+    width: min(25rem, 100%);
+    border-radius: 100%;
+    border: 2px solid black;
+    height: auto;
+}
+
+@media(width < 750px){
+    nav .checkbox{
+        display: block;
+    }
+
+    ul{
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 85px);
+        left: -100%;
+        top: 85px;
+        background-color: var(--extra-light);
+        flex-direction: column;
+        flex-direction: center;
+        gap: 3rem;
+    }
+
+    nav #check:checked ~ ul{
+        left: 0;
+    }
+    
+    ul li a{
+        font-size: 1.25rem;
+    }
+
+    .section__container{
+        padding: 10rem 1rem 5rem 1rem;
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .image {
+        grid-area: 2/1/2/2;
+    }
+
+    .action__btns{
+        margin:auto;
+    }
+}
+
+.Project{
+    margin:0;
+}
+
+.sectionp{
+    display: flex;
+    background-color: #2E2C39;
+    color: white;
+    justify-content: space-between;
+    width: 80%;
+    padding: 40px;
+    margin: 20px auto 0 auto;
+    border-radius: 2rem;;
+}
+
+.sectionp img{
+    height: 250px;
+}
+
+.sectionp h1{
+    margin: 0;
+}
+
+.sectionp p{
+    margin-right: 15px;
+}
+
+footer {
+    background-color: white;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.footer-container {
+    display: inline-block;
+}
+
+.footer-container p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer-links {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+.footer-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.footer-links li a {
+    font-size: 14px;
+}
+
+.footer-links li a:hover {
+    font-size: 20px;
+}
+
+
+
+
+
+
